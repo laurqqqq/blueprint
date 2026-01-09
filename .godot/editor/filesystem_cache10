@@ -1,0 +1,12 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1767931344
+main.tscn::PackedScene::3739199217087429847::1767931267::0::1::::<><><>0<>0<><>::uid://dyfrjgf47ndoc::::res://Grass008_2K-JPG_Color.jpg<>uid://deieceldv5p3a::::res://player/player.tscn
+::res://grass/::1767931541
+Grass008_2K-JPG_AmbientOcclusion.jpg::CompressedTexture2D::3679422043495136404::1760142584::1767931557::1::::<><><>0<>0<>edd1fd5f4d320f46ef9a1ad1c50b0c97<>res://.godot/imported/Grass008_2K-JPG_AmbientOcclusion.jpg-6eb28cd9194e4d3722acbf5d2f09e756.s3tc.ctex::
+Grass008_2K-JPG_Color.jpg::CompressedTexture2D::4369161133936768551::1760142610::1767931354::1::::<><><>0<>0<>bcbe803c4db8ef37d3a2919d5a870006<>res://.godot/imported/Grass008_2K-JPG_Color.jpg-42f711afa886f61aebb8bca16a2a7156.s3tc.ctex::
+Grass008_2K-JPG_Displacement.jpg::CompressedTexture2D::6245255146425248257::1760142538::1767931336::1::::<><><>0<>0<>c6e22538b2132c23ded2837c95777a1b<>res://.godot/imported/Grass008_2K-JPG_Displacement.jpg-c5a9bc724c19920e7da72be585bea0e7.ctex::
+Grass008_2K-JPG_NormalDX.jpg::CompressedTexture2D::6186695430272055613::1760142328::1767931499::1::::<><><>0<>0<>d4d82310285d5335b04a045cf09aa1f3<>res://.godot/imported/Grass008_2K-JPG_NormalDX.jpg-22f26c848899a141df04b9e5753f4c76.s3tc.ctex::
+Grass008_2K-JPG_Roughness.jpg::CompressedTexture2D::6061213174785461325::1760142676::1767931401::1::::<><><>0<>0<>576433c1a76bb991e5ff3edc343db998<>res://.godot/imported/Grass008_2K-JPG_Roughness.jpg-96176f7b74f813d7ff493901c8a7aa4b.s3tc.ctex::
+::res://player/::1767930903
+player.gd::GDScript::7369944669443801540::1767930118::0::1::::<>CharacterBody3D<><>0<>0<><>::
+player.tscn::PackedScene::7456779114474602452::1767930118::0::1::::<><><>0<>0<><>::uid://ddab6ahaywniq::::res://player/player.gd
