@@ -1,0 +1,47 @@
+[gd_scene load_steps=10 format=3 uid="uid://btjkcg57xukxr"]
+
+[ext_resource type="PackedScene" uid="uid://deieceldv5p3a" path="res://player/player.tscn" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://b3ippfbip3yjf" path="res://grass/Grass008_2K-JPG_Color.jpg" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://bsolsqjgalieu" path="res://grass/Grass008_2K-JPG_AmbientOcclusion.jpg" id="2_7mycd"]
+[ext_resource type="Texture2D" uid="uid://cue478e7hsm10" path="res://grass/Grass008_2K-JPG_NormalDX.jpg" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://csmdkbr0uy01v" path="res://grass/Grass008_2K-JPG_Roughness.jpg" id="4_5vw27"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_j2q8x"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_112p8"]
+sky_material = SubResource("ProceduralSkyMaterial_j2q8x")
+
+[sub_resource type="Environment" id="Environment_e2u21"]
+background_mode = 2
+sky = SubResource("Sky_112p8")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kek77"]
+albedo_texture = ExtResource("1_lquwl")
+roughness_texture = ExtResource("4_5vw27")
+normal_enabled = true
+normal_texture = ExtResource("3_272bh")
+ao_enabled = true
+ao_texture = ExtResource("2_7mycd")
+uv1_scale = Vector3(5, 5, 5)
+
+[node name="main" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e2u21")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21109533, 1.9073486e-06, 0.041427612)
+use_collision = true
+size = Vector3(111, 1, 111)
+material = SubResource("StandardMaterial3D_kek77")
+
+[node name="player" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
