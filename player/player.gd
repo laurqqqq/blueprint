@@ -1,8 +1,14 @@
 extends CharacterBody3D
 const SPEED = 5
 const JUMP_VELOCITY = 4.5
-const SENS = .3
+const SENS = .1
 @onready var camera: Camera3D = $Camera
+@onready var ray_cast_3d: RayCast3D = $Camera/RayCast3D
+const CUBE_SCENE = preload("uid://dn1cyjp0jru4c")
+
+
+
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -14,6 +20,23 @@ func look_around(event: InputEvent) -> void:
 		camera.rotation_degrees.x = clamp(camera.rotation_degrees.x,-80.0 , 80.0)
 
 func _unhandled_input(event: InputEvent) -> void:
+	
+	
+	
+	if event.is_action_pressed("click"):
+		
+		if ray_cast_3d.is_colliding():
+			var cube = CUBE_SCENE.instantiate()
+		
+			cube.cube_position =  ray_cast_3d.get_collision_point()
+
+			add_child(cube)
+			
+	elif event.is_action_pressed("right_click"):
+		# this should delte cube
+		pass
+		
+	
 	look_around(event)
 	if event.is_action_pressed("ui_cancel"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
@@ -22,6 +45,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		
 func _physics_process(delta: float) -> void:
+	
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

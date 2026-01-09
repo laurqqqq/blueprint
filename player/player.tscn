@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://deieceldv5p3a"]
+[gd_scene load_steps=6 format=3 uid="uid://deieceldv5p3a"]
 
 [ext_resource type="Script" uid="uid://ddab6ahaywniq" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://bdo71q6f7hrj8" path="res://player/ray_cast_3d.gd" id="2_rkbax"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kqu6x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oul6g"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_oul6g"]
 
 [node name="player" type="CharacterBody3D"]
 script = ExtResource("1_oul6g")
@@ -19,3 +22,24 @@ shape = SubResource("CapsuleShape3D_oul6g")
 
 [node name="Camera" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5872455, -0.25976884)
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.022852302, 0.25976884)
+target_position = Vector3(0, 0, -100)
+debug_shape_thickness = 5
+script = ExtResource("2_rkbax")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.16470589, 1, 0.27450982, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.5
+offset_right = 4.0
+offset_bottom = 4.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_oul6g")
